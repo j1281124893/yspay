@@ -1,6 +1,6 @@
 {
-  "name": "yspay/php-sdk",
-  "description": "支付PHP SDK",
+  "name": "yspay/gugu",
+  "description": "非正常包",
   "type": "library",
   "license": "MIT",
   "authors": [
