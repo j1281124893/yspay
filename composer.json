@@ -1,24 +1,23 @@
 {
-    "name": "yspay/php-sdk",
-    "description": "支付PHP SDK",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "cader",
-            "email": "1028914082@qq.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "classmap": [
-            "./"
-        ],
-        "psr-4": {
-            "Yspay\\": "src/"
-        }
-    },
-    "require": {
-        "phpunit/phpunit": "9.*"
+  "name": "yspay/php-sdk",
+  "description": "支付PHP SDK",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "cader",
+      "email": "1028914082@qq.com"
     }
+  ],
+  "autoload": {
+    "classmap": [
+      "./"
+    ],
+    "psr-4": {
+      "Yspay\\": "src/"
+    }
+  },
+  "require": {
+    "phpunit/phpunit": "9.*"
+  }
 }
