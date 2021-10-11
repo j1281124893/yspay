@@ -1,28 +1,26 @@
 <?php
-
 namespace Yspay\SDK\Gathering\Kernel;
-
 
 class Config
 {
-	public $postType;
-	public $url;
-	public $charset = "utf-8";
-	public $charsetGBK = "GBK";
-	public $sign_type = "RSA";
-	public $partner_id;
-	public $notify_url;
-	public $dfUrl;
-	public $dfOderUrl;
-	public $commonUrl;
-	public $qrcodeUrl;
-	public $trusteeshipUrl;
-	public $searchUrl;
-	public $version = "3.0";
+    public $postType;
+    public $url;
+    public $charset    = "utf-8";
+    public $charsetGBK = "GBK";
+    public $sign_type  = "RSA";
+    public $partner_id;
+    public $notify_url;
+    public $dfUrl;
+    public $dfOderUrl;
+    public $commonUrl;
+    public $qrcodeUrl;
+    public $trusteeshipUrl;
+    public $searchUrl;
+    public $version    = "3.0";
     public $private_key;
     public $pfxpassword;
-    public $publicKey
-        ="-----BEGIN CERTIFICATE-----
+    public $businessgatecerpath;
+    public $publicKey  = "-----BEGIN CERTIFICATE-----
 MIICizCCAfSgAwIBAgIEIL4JYzANBgkqhkiG9w0BAQQFADBcMQ8wDQYDVQQDDAZ5
 c2VwYXkxDzANBgNVBAsMBnlzZXBheTERMA8GA1UECgwIb3JnYW5pemUxCzAJBgNV
 BAcMAnN6MQswCQYDVQQGEwJjbjELMAkGA1UECAwCZ2QwHhcNMTMwMzA0MDgwMzUy

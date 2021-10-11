@@ -47,7 +47,6 @@ class Division
 
             $headParams = $this->common->encodeParams($headParams,$bizReqJson);
             $url = $this->kernel->commonUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, 'ysepay_single_division_online_accept_response', false);
        } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -83,7 +82,6 @@ class Division
 
             $headParams = $this->common->encodeParams($headParams,$bizReqJson);
             $url = $this->kernel->commonUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_single_division_online_query_response", false);
        } catch (YSNetworkException $e) {
             $responses = new Response();
