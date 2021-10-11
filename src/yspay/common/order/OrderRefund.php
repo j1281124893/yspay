@@ -50,7 +50,6 @@ class OrderRefund
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_trade_refund_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -83,7 +82,6 @@ class OrderRefund
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_trade_refund_split_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -117,7 +115,6 @@ class OrderRefund
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_trade_refund_general_account_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -151,7 +148,6 @@ class OrderRefund
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_trade_refund_query_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -185,7 +181,6 @@ class OrderRefund
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->searchUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_trade_order_query_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -219,7 +214,6 @@ class OrderRefund
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_bill_downloadurl_get_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();

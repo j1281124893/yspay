@@ -135,8 +135,8 @@ class CupmulappQrcodepayRequest
             'device_info' => $model->device_info,
             'terminal_info' => $model->terminal_info,
             'limit_credit_pay' => $model->limit_credit_pay,
-            'allow_repeat_pay' => $model->fail_notify_url,
-            'fail_notify_url' => $model->spbill_create_ip,
+            'allow_repeat_pay' => $model->allow_repeat_pay,
+            'fail_notify_url' => $model->fail_notify_url,
 
 
 
