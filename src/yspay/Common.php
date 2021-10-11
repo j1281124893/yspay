@@ -131,7 +131,15 @@ class Common
             //var_dump($response);
             if ($response["sign"] != null) {
                 $sign = $response["sign"];
-                $data = json_encode($response[$response_name], JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES);
+                unset($response['sign']);
+                ksort($response);
+                $url = "";
+                foreach ($response as $key => $val) {
+                    if ($val) {
+                        $url .= $key . '=' . $val . '&';
+                    }
+                }
+                $data = trim($url, '&');
                 // 验证签名 仅作基础验证
                 if ($this->sign_check($sign, $data) == true) {
                     //echo "验证签名成功!";
@@ -169,13 +177,12 @@ class Common
      */
     function sign_check($sign, $data)
     {
-        //  $publickeyFile = $this->kernel->businessgatecerpath; //公钥
-        //  $certificateCAcerContent = file_get_contents($publickeyFile);
-        //   $certificateCApemContent = '-----BEGIN CERTIFICATE-----' . PHP_EOL . chunk_split(base64_encode($certificateCAcerContent), 64, PHP_EOL) . '-----END CERTIFICATE-----' . PHP_EOL;
-        //  print_r($certificateCApemContent);
+        $publickeyFile = $this->kernel->businessgatecerpath;
+        //公钥
+        $certificateCAcerContent = file_get_contents($publickeyFile);
+        $certificateCApemContent = '-----BEGIN CERTIFICATE-----' . PHP_EOL . chunk_split(base64_encode($certificateCAcerContent), 64, PHP_EOL) . '-----END CERTIFICATE-----' . PHP_EOL;
         // 签名验证
-        $success = openssl_verify($data, base64_decode($sign), openssl_get_publickey($this->kernel->publicKey), OPENSSL_ALGO_SHA1);
-        return $success;
+        return openssl_verify($data, base64_decode($sign), openssl_get_publickey($certificateCApemContent), OPENSSL_ALGO_SHA1);
     }
 
 
