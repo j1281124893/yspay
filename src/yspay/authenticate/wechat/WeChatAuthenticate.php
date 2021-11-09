@@ -46,7 +46,6 @@ class WeChatAuthenticate
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_authenticate_wx_apply_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -77,7 +76,6 @@ class WeChatAuthenticate
             $sign = $this->common->sign_encrypt(array('data' => $signStr));
             $headParams['sign'] = trim($sign['check']);
             $url = 'https://register.ysepay.com:2443/register_gateway/gateway.do';
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_merchant_register_token_get_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -114,12 +112,9 @@ class WeChatAuthenticate
             $filePath = $this->common->str_to_utf8($model->filePath);
             $filename = $this->common->str_to_utf8($model->filename);
 
-            var_dump($filePath);
-            var_dump($filename);
             $curl_file = curl_file_create(iconv('utf-8', 'gbk', $filePath), 'image/jpeg', $filename);
             $headParams['picFile'] = $curl_file;
             $url = 'https://uploadApi.ysepay.com:2443/yspay-upload-service?method=upload';
-            $responses = new Response();
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $headParams);
@@ -172,7 +167,6 @@ class WeChatAuthenticate
             );
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_authenticate_wx_query_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -208,7 +202,6 @@ class WeChatAuthenticate
             );
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_authenticate_wx_apply_cancel_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -241,7 +234,6 @@ class WeChatAuthenticate
             $bizReqJson = AuthenticateApplyQueryRequest::build($this->kernel, $model);
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_authenticate_wx_authorized_query_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();

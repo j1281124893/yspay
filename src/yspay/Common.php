@@ -129,7 +129,7 @@ class Common
             //echo PHP_EOL . "渠道响应报文" . json_encode($response, JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES) . PHP_EOL;
 
             //var_dump($response);
-            if ($response["sign"] != null) {
+            if ($response["sign"]   != null) {
                 $sign = $response["sign"];
                 $data = json_encode($response[$response_name], JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES);
                 // 验证签名 仅作基础验证
