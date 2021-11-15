@@ -47,7 +47,6 @@ class Merchant
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->commonUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_merchant_withdraw_quick_accept_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -82,7 +81,6 @@ class Merchant
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->commonUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_merchant_withdraw_d0_accept_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -117,7 +115,6 @@ class Merchant
             $bizReqJson = MerchantWithdrawQueryRequest::build($this->kernel, $model);
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->commonUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_merchant_withdraw_quick_query_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -151,7 +148,6 @@ class Merchant
             $bizReqJson = MerchantBalanceQueryRequest::build($this->kernel, $model);
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->commonUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_merchant_balance_query_response", false);
         } catch (YSNetworkException $e) {
             $responses = new Response();
