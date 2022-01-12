@@ -49,7 +49,6 @@ class Pay
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_trade_delivered_response", false);
        } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -82,7 +81,6 @@ class Pay
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_trade_confirm_response", false);
        } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -116,7 +114,6 @@ class Pay
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->qrcodeUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_barcodepay_response", false);
        } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -149,7 +146,6 @@ class Pay
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->qrcodeUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_alijsapi_pay_response", true);
        } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -216,7 +212,6 @@ class Pay
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->qrcodeUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_cupgetmulapp_userid_response", true);
        } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -250,7 +245,6 @@ class Pay
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->qrcodeUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_cupmulapp_qrcodepay_response", true);
        } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -284,7 +278,6 @@ class Pay
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->qrcodeUrl;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_qrcodepay_response", true);
        } catch (YSNetworkException $e) {
             $responses = new Response();
@@ -318,7 +311,6 @@ class Pay
 
             $headParams = $this->common->encodeParams($headParams, $bizReqJson);
             $url = $this->kernel->url;
-            var_dump($headParams);
             return $this->common->post_Url($url, $headParams, "ysepay_online_mobile_controls_pay_response", true);
        } catch (YSNetworkException $e) {
             $responses = new Response();

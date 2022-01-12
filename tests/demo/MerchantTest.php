@@ -43,7 +43,6 @@ class MerchantTest extends Base
 
 
             $response = Factory::merchantClient()->merchantClass()->merchantWithdraw($request);
-            var_dump($response, true);
             $responseChecker = new ResponseChecker();
             // 处理响应或异常
             if ($responseChecker->success($response)) {
