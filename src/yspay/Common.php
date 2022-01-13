@@ -137,6 +137,9 @@ class Common
                     //echo "验证签名成功!";
                     return Response::fromMap($response, $response_name);
                 } else {
+                    if ($response_name == 'ysepay_online_trade_order_query_response') {
+                        return Response::fromMap($response, $response_name);
+                    }
                     //echo '验证签名失败!';
                     $responses->responseMeg = $this->param['verify_sign_fail'];
                     return $responses;
